@@ -6,6 +6,8 @@
  */
 
 module.exports = {
-    list: function (req, res) { return res.send('Hi there!'); }
+    create: function (req, res) { return res.send('Create a list'); },
+    list: function (req, res) { return res.send('Got a list'); },
+    fulllist: function (req, res) { return res.send('Got a full list'); }
 };
 
