@@ -25,8 +25,16 @@ module.exports.routes = {
   ***************************************************************************/
 
   '/': {
-    view: 'pages/homepage'
+    view: 'pages/homepage',
+   
   },
+  'GET /cmd': 'CommandeController.list',
+  'GET /google': 'http://www.google.com',
+  '/foo': { response: 'notFound' },
+  //'/foo': [
+  //  { policy: 'my-policy' },
+  //  { view: 'dashboard' }
+  //]
 
   /***************************************************************************
   *                                                                          *
