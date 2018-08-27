@@ -6,7 +6,6 @@
  */
 
 module.exports = {
-  
-
+    list: function (req, res) { return res.send('Hi there!'); }
 };
 
