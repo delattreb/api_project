@@ -7,7 +7,7 @@
 
 module.exports = {
     //create: function (req, res) { return res.send('Create a list'); },
-    list: function (req, res) { return res.send('Got a list'); },
+    list: async function (req, res) { return res.send(await sails.helpers.formatWelcomeMessage('Got a list')); },
     fulllist: function (req, res) { return res.send('Got a full list'); },
 
     getcmdbynumber: async function (req, res) {
