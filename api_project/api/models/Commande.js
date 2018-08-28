@@ -10,6 +10,9 @@ module.exports = {
     id: { type: 'number', columnName: 'id', autoIncrement: true },
     name: { type: 'string', columnName: 'name', required: true },
     number: { type: 'string', columnName: 'number' }
+  },
+  customToJSON: function () {
+    return _.omit(this, ['createdAt', 'updatedAt'])
   }
 };
 
