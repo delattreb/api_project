@@ -10,11 +10,6 @@
 
 module.exports.routes = {
 
-
-  //  ╦ ╦╔═╗╔╗ ╔═╗╔═╗╔═╗╔═╗╔═╗
-  //  ║║║║╣ ╠╩╗╠═╝╠═╣║ ╦║╣ ╚═╗
-  //  ╚╩╝╚═╝╚═╝╩  ╩ ╩╚═╝╚═╝╚═╝
-
   /***************************************************************************
   *                                                                          *
   * Make the view located at `views/homepage.ejs` your home page.            *
@@ -26,28 +21,23 @@ module.exports.routes = {
 
   '/': {
     view: 'pages/homepage',
-   
+
   },
   'GET /list': 'CommandeController.list',
   'GET /fulllist': 'CommandeController.fulllist',
-  'GET /create': 'CommandeController.create',
+  'POST /create': 'CommandeController.create',
+  'GET /cmd': 'CommandeController.fulllist',  // check restriction into controller only
+  'GET /getcmdbynumber': 'CommandeController.getcmdbynumber',  // check restriction into controller only
 
-  'GET /google': 'http://www.google.com',
-  '/foo': { response: 'notFound' },
-  //'/foo': [
-  //  { policy: 'my-policy' },
-  //  { view: 'dashboard' }
-  //]
+
+  //'GET /google': 'http://www.google.com',
+  //'/foo': { response: 'notFound' },
 
   /***************************************************************************
-  *                                                                          *
-  * More custom routes here...                                               *
-  * (See https://sailsjs.com/config/routes for examples.)                    *
-  *                                                                          *
-  * If a request to a URL doesn't match any of the routes in this file, it   *
-  * is matched against "shadow routes" (e.g. blueprint routes).  If it does  *
-  * not match any of those, it is matched against static assets.             *
-  *                                                                          *
+  * Authentification Routes                                               *
   ***************************************************************************/
-
+  //'GET /login': { view: 'login' },
+  '/login': 'AuthController.login',
+  '/logout': 'AuthController.logout',
+  //'GET /register': { view: 'register' }
 };

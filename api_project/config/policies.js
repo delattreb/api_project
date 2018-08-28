@@ -17,7 +17,7 @@ module.exports.policies = {
   *                                                                          *
   ***************************************************************************/
 
-  // '*': true,
+  '*': true,
 
   CommandeController: {
     'create': 'isAdmin',
