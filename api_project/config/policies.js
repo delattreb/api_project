@@ -20,7 +20,7 @@ module.exports.policies = {
   '*': true,
 
   CommandeController: {
-    'create': 'isAdmin',
+    //'create': 'isAdmin',
     'fulllist': 'isAdmin'
   }
 };

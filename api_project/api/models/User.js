@@ -14,7 +14,7 @@ module.exports = {
     password: { type: 'string', columnName: 'password', required: true }
   },
   customToJSON: function () {
-    return _.omit(this, ['password'])
+    return _.omit(this, ['password', 'createdAt', 'updatedAt'])
   },
   beforeCreate: function (user, cb) {
     bcrypt.genSalt(10, function (err, salt) {
@@ -26,11 +26,3 @@ module.exports = {
     });
   }
 };
-
-//Test URL to create user
-//http://127.0.0.1:1337/user/create?username=bruno&password=infected&email=bruno.delattre@linkt.fr
-
-//http://127.0.0.1:1337/login?username=bruno&password=infected
-
-
-
